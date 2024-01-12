@@ -1,13 +1,14 @@
 import { useState } from "react"
 import reactLogo from "./assets/react.svg"
 import "./App.css"
+import { getBaseUrl } from "./utils"
 
 function App() {
   const [count, setCount] = useState(0)
   const [msg, setMsg] = useState(null)
 
   function getMesasge() {
-    fetch("http://localhost:3000/hello")
+    fetch(`${getBaseUrl()}/hello`)
       .then((res) => {
         if (!res.ok) {
           throw new Error(`${res.status} - ${res.statusText}`)

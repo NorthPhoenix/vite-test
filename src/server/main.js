@@ -7,6 +7,6 @@ app.get("/hello", (req, res) => {
   res.send("Hello Express! " + (Math.random() * 1000).toFixed(0));
 });
 
-ViteExpress.listen(app, 3000, () =>
+ViteExpress.listen(app, process.env.PORT ?? 3000, () =>
   console.log("Server is listening on port 3000..."),
 );
