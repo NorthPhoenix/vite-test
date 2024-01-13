@@ -1,0 +1,7 @@
+{
+  "functioins": {
+    "api/**/*": {
+      "memory": 1024
+    }
+  }
+}
