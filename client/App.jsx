@@ -13,10 +13,10 @@ function App() {
         if (!res.ok) {
           throw new Error(`${res.status} - ${res.statusText}`)
         }
-        return res.text()
+        return res.json()
       })
-      .then((text) => {
-        setMsg(text)
+      .then((json) => {
+        setMsg(json.body)
       })
       .catch((err) => {
         console.error(err)
