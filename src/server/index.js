@@ -1,18 +1,12 @@
-// import express from "express";
-// import ViteExpress from "vite-express";
-
-// const app = express();
-
-// app.get("/hello", (req, res) => {
+// export default function handler(req, res) {
 //   res.send("Hello Express! " + (Math.random() * 1000).toFixed(0));
-// });
-
-// if (!process.env.VERCEL) {
-//   ViteExpress.listen(app, process.env.PORT ?? 3000, () =>
-//     console.log("Server is listening on port 3000..."),
-//   );
 // }
 
-export default function handler(req, res) {
-  res.send("Hello Express! " + (Math.random() * 1000).toFixed(0));
+// https://vercel.com/docs/functions/serverless-functions/quickstart
+export default function handler(request, response) {
+  response.status(200).json({
+    body: `Hello from lambda! ${(Math.random() * 1000).toFixed(0)}`,
+    query: request.query,
+    cookies: request.cookies,
+  });
 }
